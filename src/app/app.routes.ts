@@ -7,6 +7,7 @@ export const routes: Routes = [
     {path:'',component:HomeComponent,title:"BookBarn"},
     {path:'cart',component:CartComponent,title:"cart"},
 
-    {path:'order',component:OrderComponent,title:"Order"}
+    {path:'order',component:OrderComponent,title:"Order"},
+    {path:'users',component:OrderComponent,title:"Order"},
 
 ];

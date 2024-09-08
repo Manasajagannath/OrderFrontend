@@ -1,1 +1,122 @@
-<p>order-management works!</p>
+<!-- <div class="container mt-5">
+    <h2 class="text-center">Admin Orders Management</h2>
+    <div class="table-responsive mt-4">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Order ID</th>
+                    <th>User ID</th>
+                    <th>Cart ID</th>
+                    <th>Order Status</th>
+                    <th>Total Amount</th>
+                    <th>Shipping Address</th>
+                    <th>Payment Method</th>
+                    <th>Order Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.orderId }}</td>
+                    <td>{{ order.userId }}</td>
+                    <td>{{ order.cartId }}</td>
+                    <td>{{ order.orderStatus }}</td>
+                    <td>{{ order.totalAmount }}</td>
+                    <td>{{ order.shippingAddress }}</td>
+                    <td>{{ order.paymentMethod }}</td>
+                    <td>{{ order.orderDate }}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm mb-2" (click)="viewOrder(order)">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                        <button class="btn btn-warning btn-sm mb-2" (click)="editOrder(order)">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn btn-success btn-sm" [disabled]="order.orderStatus === 'Fulfilled'" (click)="fulfillOrder(order)">
+                            <i class="fas fa-check"></i> Fulfill
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="orders.length === 0">
+                    <td colspan="9" class="text-center">No orders available</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>-->
+
+   <!-- Modal for Viewing Order Details   -->
+    <div class="modal fade" id="viewOrderModal" tabindex="-1" role="dialog" aria-labelledby="viewOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewOrderModalLabel">View Order #{{ selectedOrder?.orderId }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>User ID:</strong> {{ selectedOrder?.userId }}</p>
+                    <p><strong>Cart ID:</strong> {{ selectedOrder?.cartId }}</p>
+                    <p><strong>Shipping Address:</strong> {{ selectedOrder?.shippingAddress }}</p>
+                    <p><strong>Payment Method:</strong> {{ selectedOrder?.paymentMethod }}</p>
+                    <p><strong>Total Amount:</strong> {{ selectedOrder?.totalAmount }}</p>
+                    <p><strong>Order Date:</strong> {{ selectedOrder?.orderDate }}</p>
+                    <p><strong>Order Status:</strong> {{ selectedOrder?.orderStatus }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Editing Order Details -->
+    <div class="modal fade" id="editOrderModal" tabindex="-1" role="dialog" aria-labelledby="editOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editOrderModalLabel">Edit Order #{{ selectedOrder?.orderId }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form (ngSubmit)="saveOrderChanges()">
+                        <div class="form-group">
+                            <label for="orderStatus">Order Status</label>
+                            <select class="form-control" [(ngModel)]="selectedOrder?.orderStatus" name="orderStatus">
+                                <option>Pending</option>
+                                <option>Shipped</option>
+                                <option>Delivered</option>
+                                <option>Fulfilled</option>
+                                <option>Canceled</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="shippingAddress">Shipping Address</label>
+                            <textarea class="form-control" [(ngModel)]="selectedOrder?.shippingAddress" name="shippingAddress"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Include Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+
+<!-- Include Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->

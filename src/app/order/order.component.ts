@@ -16,22 +16,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class OrderComponent implements OnInit {
   orders: Order[] = [];
+  userId:number=1;
 
 
 
   constructor(private ordersService: OrdersService) {}
 
   ngOnInit(): void {
-    this.getAdminOrders();
+    this.getOrders();
   }
 
-  getAdminOrders(): void {
-    this.ordersService.getAdminOrders().subscribe((orders) => {
-      this.orders = orders;
-    });
-  }
+  
   getOrders(): void {
-    this.ordersService.getOrders().subscribe(
+    this.ordersService.getUserOrders(this.userId).subscribe(
       (data) => {
         this.orders = data;
         console.log(this.orders); // Debug: Log the fetched orders here
@@ -42,12 +39,7 @@ export class OrderComponent implements OnInit {
     );
   }
 
-  updateOrder(order: Order): void {
-    // You can implement functionality to update the order status
-    this.ordersService.updateOrder(order).subscribe(() => {
-      alert('Order updated successfully');
-    });
-  }
+ 
 
   rateOrder(order: Order): void {
     // Implement the logic to open a modal or navigate to a rating/review page.

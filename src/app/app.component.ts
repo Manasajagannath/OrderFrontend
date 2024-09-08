@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
