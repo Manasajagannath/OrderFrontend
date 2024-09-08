@@ -1,0 +1,24 @@
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #F2A900; /* Golden Yellow */
+  }
+  
+  .nav-link {
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    color: #F2A900;
+  }
+  
+  .navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+
+/* Badge customization for cart */
+.badge {
+  font-size: 0.5rem;
+  padding: 0.5em 0.6em;
+}

@@ -1,0 +1,14 @@
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+  }
+  
+  footer a {
+    color: #F2A900;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

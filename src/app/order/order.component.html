@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Your Orders</h2>
+<div *ngFor="let order of orders" class="order-card">
+  <h5>Order #{{order.orderId}}</h5>
+  <p class="order-details">
+    <strong>Order Status:</strong> {{order.orderStatus}}<br>
+    <strong>Total Amount:</strong> ${{order.totalAmount}}<br>
+    <strong>Shipping Address:</strong> {{order.shippingAddress}}<br>
+    <strong>Payment Method:</strong> {{order.paymentMethod}}<br>
+    <strong>Order Date:</strong> {{order.orderDate }}
+  </p>
+  <div class="rate-review-btn">
+    <button class="btn btn-primary" (click)="rateOrder(order)">Rate and Review</button>
+  </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

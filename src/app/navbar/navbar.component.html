@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">BookBarn</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/books']">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/order']">Orders</a>
+          </li>
+          <li class="nav-item position-relative">
+            <a class="nav-link" routerLink="/cart">
+              <i class="bi bi-cart-fill"></i>
+              <!-- <span *ngIf="cartItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ cartItems.length }}
+                <span class="visually-hidden">cart items</span>
+              </span> -->
+              <span  class="position-absolute top-1 start-99 translate-middle badge rounded-pill bg-danger">
+              1
+                <span class="visually-hidden">cart items</span>
+              </span>
+            </a>
+          </li>
+
+          <!-- Add the profile link in the routerlink -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/profile/:id']">
+                <i class="bi bi-person-fill"></i>
+            </a>
+          </li>
+
+
+          <!-- Add the wishlist link in the routerlink -->
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">
+                <i class="bi bi-bag-heart-fill"></i>
+            </a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
